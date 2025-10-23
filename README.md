@@ -18,6 +18,20 @@ Time-lock file encryption that combines an RSA time-lock puzzle (sequential squa
   - Hex: .tloc.hex.enc
 - Progress indicators (tqdm) and fast header sanity checks.
 
+## Installation
+
+- Python 3
+- Dependencies:
+  - pycryptodome
+  - tqdm
+
+Install:
+- pip install -r requirements.txt (or manually install the dependencies)
+
+Run:
+- python3 TimeEncryption.py encrypt FILE --tlp-time --max-index --iterations --password
+- python3 TimeEncryption.py decrypt FILE --password --start-index
+
 ## How It Works
 
 1) Time-Lock Puzzle (TLP)
@@ -55,15 +69,6 @@ Decryption reverses:
      - If you need emergency access, you can rent parallel cloud compute (multiple CPUs/GPUs/instances) and spread the index search to reduce your own unlock time to days or hours.
 In short: TLP provides a minimum, non-parallelizable delay for everyone; PBKDF2 adds a tunable, parallelizable layer that makes unauthorized access expensive while letting the legitimate owner “buy time” back with burst compute.
 
-## Installation
-
-- Python 3.8+
-- Dependencies:
-  - pycryptodome
-  - tqdm
-
-Install:
-- pip install pycryptodome tqdm
 
 ## Usage
 
