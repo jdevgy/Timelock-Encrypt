@@ -184,7 +184,6 @@ static void to_hex(const unsigned char* in, size_t n, char* out) {
 
 // ---------- Password/index derivation helpers ----------
 /*
-compute_pw_in replicates your Python logic:
 
 indexhash_hex = hex(sha256(str(index)))
 hexhmac = hex(HMAC_SHA256(seed, indexhash_hex))
